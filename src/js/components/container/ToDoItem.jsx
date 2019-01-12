@@ -9,7 +9,6 @@ class ToDoItem extends Component {
                 <ToDoItemPre
                     text={this.props.item}
                     handleDelete={this.props.handleDelete}
-
                 />
             </div>
         );

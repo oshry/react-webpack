@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ToDoItem from "../container/ToDoItem.jsx";
+import Logo from '../../../assets/img/logo.png';
+
 const ToDoItemList = ({ list, todo, handleDelete, createNewToDoItem , handleKeyPress, handleInput }) => (
     <div className="ToDo">
-        {/*<img className="Logo" src={Logo} alt="React logo"/>*/}
+        <img className="Logo" src={Logo} alt="React logo"/>
         <h1 className="ToDo-Header">React To Do</h1>
         <div className="ToDo-Container">
 
