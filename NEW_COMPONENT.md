@@ -9,7 +9,7 @@
        //import react core
        import React, { Component } from "react";
        //import presentational
-       import Input from "../presentational/Input.jsx";
+       import Input from "../presentational/Test.jsx";
 
        class NewContainer extends Component {
            constructor() {
@@ -20,14 +20,17 @@
                };
            }
            handleChange = event => {
-               console.log(event.target.value);
+               // set event id with new value
+               // in this case on handleChange trigger fire
+               // input id "seo_title" get new value
                this.setState({ [event.target.id]: event.target.value });
            }
            render() {
                const { seo_title } = this.state;
                return (
                    <form id="article-form">
-                       <Input
+                       //send data to test present
+                       <Test
                            text={seo_title}
                            label="seo_title"
                            type="text"
@@ -40,3 +43,29 @@
            }
        }
        export default NewContainer;
+
+4. /presentational/Test.jsx
+    import React from "react";
+    import PropTypes from "prop-types";
+    const Test = ({ label, text, type, id, value, handleChange }) => (
+        <div className="form-group">
+            <label htmlFor={label}>{text}</label>
+            <input
+                type={type}
+                className="form-control"
+                id={id}
+                value={value}
+                onChange={handleChange}
+                required
+            />
+        </div>
+    );
+    Test.propTypes = {
+        label: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+        handleChange: PropTypes.func.isRequired
+    };
+    export default Test;
