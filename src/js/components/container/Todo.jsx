@@ -36,6 +36,8 @@ class ToDo extends Component {
 
     handleKeyPress = e => {
         if (e.target.value !== '') {
+            // console.log('e.target.value');
+            // console.log(e.target.value);
             if (e.key === 'Enter') {
                 this.createNewToDoItem();
             }
